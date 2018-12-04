@@ -14,14 +14,12 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
-import org.mockito.junit.MockitoJUnitRunner;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import com.plano.accounting.customer.entities.CustomerDetail;
 import com.plano.accounting.customer.model.Customer;
 
-@RunWith(MockitoJUnitRunner.class)
-@SpringBootTest
+@RunWith(SpringRunner.class)
 public class CustomerDaoImplTests {
 
 	@Mock

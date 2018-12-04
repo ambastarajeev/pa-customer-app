@@ -2,7 +2,7 @@ package com.plano.accounting.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-
+	
 @SpringBootApplication(scanBasePackages = "com.plano.accounting.customer")
 public class PlanoAccontingCustomerApp {
 		
