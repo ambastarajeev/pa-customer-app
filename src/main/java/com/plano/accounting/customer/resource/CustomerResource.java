@@ -1,4 +1,4 @@
-package com.plano.accounting.customer.service;
+package com.plano.accounting.customer.resource;
 
 import java.util.List;
 
@@ -16,7 +16,7 @@ import com.plano.accounting.customer.model.Customer;
 
 @RestController
 @RequestMapping(path = "/customer")
-public class CustomerService {
+public class CustomerResource {
 	
 	@Autowired
 	CustomerDao customerDao;
