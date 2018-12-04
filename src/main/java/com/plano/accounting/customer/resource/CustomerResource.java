@@ -2,6 +2,8 @@ package com.plano.accounting.customer.resource;
 
 import java.util.List;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,13 +20,16 @@ import com.plano.accounting.customer.model.Customer;
 @RequestMapping(path = "/customer")
 public class CustomerResource {
 	
+	private static final Logger logger = LogManager.getLogger(CustomerResource.class);
+	
 	@Autowired
 	CustomerDao customerDao;
 
 	@GetMapping(path="/{id}", produces = "application/json")
 	public Customer getCustomerById(@PathVariable("id") int customerId)
 	{
-		System.out.println("customerId: " + customerId);
+		logger.info("Entering getCustomerById");
+		logger.debug("customerId: " + customerId);
 		Customer customerInfo = customerDao.getCustomerDetailById(customerId);
 		return customerInfo;
 	}
@@ -32,7 +37,8 @@ public class CustomerResource {
 	@GetMapping(path="/list", produces = "application/json")
 	public List<Customer> getCustomersByType(@RequestParam("type") String type)
 	{
-		System.out.println("type: " + type);
+		logger.info("Entering getCustomersByType");
+		logger.debug("type: " + type);
 		List<Customer> custmersList = customerDao.getCustomersByType(type);
 		return custmersList;
 	}
@@ -40,9 +46,10 @@ public class CustomerResource {
 	@PostMapping(path="/add", produces = "application/json", consumes = "application/json")
 	public String addCustomer(@RequestBody Customer customer)
 	{
-		System.out.println("customer: " + customer);
+		logger.info("Entering addCustomer");
+		logger.debug("Add customer: " + customer);
 		int customerId = customerDao.addCustomer(customer); 
-		System.out.println("customerId: " + customerId);
+		logger.debug("Generated customerId: " + customerId);
 		return "Successful registration. Id: " + customerId;
 	}
 }
