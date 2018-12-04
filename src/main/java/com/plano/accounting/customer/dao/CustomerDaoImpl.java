@@ -64,7 +64,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	 * @param customer the customer
 	 * @return the customer detail
 	 */
-	private CustomerDetail mapToCustomerDetail(Customer customer) {
+	public CustomerDetail mapToCustomerDetail(Customer customer) {
 		logger.info("Entering mapToCustomerDetail");
 		if(customer != null) {
 			return new CustomerDetail(customer.getName(), customer.getAge(), customer.getEmailId(), customer.getType());
@@ -78,7 +78,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	 * @param custDetail the cust detail
 	 * @return the customer
 	 */
-	private Customer mapToCustomer(CustomerDetail custDetail) {
+	public Customer mapToCustomer(CustomerDetail custDetail) {
 		logger.info("Entering mapToCustomer");
 		if(custDetail != null) {
 			return new Customer(custDetail.getCustomerId(), custDetail.getName(), 
@@ -93,7 +93,7 @@ public class CustomerDaoImpl implements CustomerDao {
 	 * @param custDetailList the cust detail list
 	 * @return the list
 	 */
-	private List<Customer> mapToCustomerList(List<CustomerDetail> custDetailList){	
+	public List<Customer> mapToCustomerList(List<CustomerDetail> custDetailList){	
 		logger.info("Entering mapToCustomerList");
 		if(custDetailList != null) {
 			return custDetailList.stream()

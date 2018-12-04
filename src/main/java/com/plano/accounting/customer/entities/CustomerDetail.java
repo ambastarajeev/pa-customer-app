@@ -43,6 +43,15 @@ public class CustomerDetail {
 		this.type = type;
 	}
 
+	public CustomerDetail(int customerId, String name, int age, String emailId, String type) {
+		super();
+		this.customerId = customerId;
+		this.name = name;
+		this.age = age;
+		this.emailId = emailId;
+		this.type = type;
+	}
+
 	public int getCustomerId() {
 		return customerId;
 	}
