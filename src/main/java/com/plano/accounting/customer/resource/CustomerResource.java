@@ -37,8 +37,7 @@ public class CustomerResource {
 	{
 		logger.info("Entering getCustomerById");
 		logger.debug("customerId: " + customerId);
-		Customer customerInfo = customerDao.getCustomerDetailById(customerId);
-		return customerInfo;
+		return customerDao.getCustomerDetailById(customerId);
 	}
 	
 	/**
@@ -52,8 +51,7 @@ public class CustomerResource {
 	{
 		logger.info("Entering getCustomersByType");
 		logger.debug("type: " + type);
-		List<Customer> custmersList = customerDao.getCustomersByType(type);
-		return custmersList;
+		return customerDao.getCustomersByType(type);
 	}
 	
 	/**

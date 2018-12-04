@@ -28,7 +28,7 @@ public class CustomerDetail {
 	@Column(name = "email_id", length=25)
 	private String emailId;
 	
-	@Column(name = "type", length=10)
+	@Column(name = "type", length=15)
 	private String type;
 
 	public CustomerDetail() {
