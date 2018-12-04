@@ -20,11 +20,18 @@ import com.plano.accounting.customer.model.Customer;
 @RequestMapping(path = "/customer")
 public class CustomerResource {
 	
+	/** The Constant logger. */
 	private static final Logger logger = LogManager.getLogger(CustomerResource.class);
 	
 	@Autowired
 	CustomerDao customerDao;
 
+	/**
+	 * Gets the customer by id.
+	 *
+	 * @param customerId the customer id
+	 * @return the customer by id
+	 */
 	@GetMapping(path="/{id}", produces = "application/json")
 	public Customer getCustomerById(@PathVariable("id") int customerId)
 	{
@@ -34,6 +41,12 @@ public class CustomerResource {
 		return customerInfo;
 	}
 	
+	/**
+	 * Gets the customers by type.
+	 *
+	 * @param type the type
+	 * @return the customers by type
+	 */
 	@GetMapping(path="/list", produces = "application/json")
 	public List<Customer> getCustomersByType(@RequestParam("type") String type)
 	{
@@ -43,6 +56,12 @@ public class CustomerResource {
 		return custmersList;
 	}
 	
+	/**
+	 * Adds the customer.
+	 *
+	 * @param customer the customer
+	 * @return the string
+	 */
 	@PostMapping(path="/add", produces = "application/json", consumes = "application/json")
 	public String addCustomer(@RequestBody Customer customer)
 	{
