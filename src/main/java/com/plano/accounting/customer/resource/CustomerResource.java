@@ -63,7 +63,7 @@ public class CustomerResource {
 	@PostMapping(path="/add", produces = "application/json", consumes = "application/json")
 	public String addCustomer(@RequestBody Customer customer)
 	{
-		logger.info("Entering addCustomer");
+		logger.info("Entering addCustomer!!");
 		logger.debug("Add customer: " + customer);
 		int customerId = customerDao.addCustomer(customer); 
 		logger.debug("Generated customerId: " + customerId);
